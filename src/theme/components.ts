@@ -20,5 +20,14 @@ export default ({ layout, backgrounds, fonts }: ComponentTheme) => {
 			height: 250,
 			width: 250,
 		},
+		square: {
+			...layout.justifyCenter,
+			...layout.itemsCenter,
+			...backgrounds.purple100,
+			...fonts.gray400,
+			borderRadius: 50,
+			height: 50,
+			width: 100,
+		},
 	} as const satisfies AllStyle;
 };

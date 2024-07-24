@@ -1,27 +1,25 @@
-import { useEffect, useState } from 'react';
 import {
-	View,
 	ActivityIndicator,
+	Alert,
+	ScrollView,
 	Text,
 	TouchableOpacity,
-	ScrollView,
-	Alert,
+	View,
 } from 'react-native';
-import i18next from 'i18next';
-import { useTranslation } from 'react-i18next';
-import { useQuery } from '@tanstack/react-query';
+import { useEffect, useState } from 'react';
 
-import { ImageVariant } from '@/components/atoms';
 import { Brand } from '@/components/molecules';
-import { SafeScreen } from '@/components/template';
-import { useTheme } from '@/theme';
-import { fetchOne } from '@/services/users';
-
-import { isImageSourcePropType } from '@/types/guards/image';
-
-import SendImage from '@/theme/assets/images/send.png';
 import ColorsWatchImage from '@/theme/assets/images/colorswatch.png';
+import { ImageVariant } from '@/components/atoms';
+import { SafeScreen } from '@/components/template';
+import SendImage from '@/theme/assets/images/send.png';
 import TranslateImage from '@/theme/assets/images/translate.png';
+import { fetchOne } from '@/services/users';
+import i18next from 'i18next';
+import { isImageSourcePropType } from '@/types/guards/image';
+import { useQuery } from '@tanstack/react-query';
+import { useTheme } from '@/theme';
+import { useTranslation } from 'react-i18next';
 
 function Example() {
 	const { t } = useTranslation(['example', 'welcome']);
