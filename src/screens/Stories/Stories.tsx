@@ -1,7 +1,6 @@
-import { Alert, Text, TouchableOpacity, View, ViewToken } from 'react-native';
+import { Alert, TouchableOpacity, View, ViewToken } from 'react-native';
 import { useCallback, useEffect, useState } from 'react';
 
-import { Badge } from '@/components/stories';
 import ColorsWatchImage from '@/theme/assets/images/colorswatch.png';
 import { ImageVariant } from '@/components/atoms';
 import { SafeScreen } from '@/components/template';
@@ -13,9 +12,10 @@ import i18next from 'i18next';
 import { isImageSourcePropType } from '@/types/guards/image';
 import { useQuery } from '@tanstack/react-query';
 import { useTheme } from '@/theme';
-import PostUI from '@/components/stories/Post/Post';
+import { PostUI } from '@/components/stories';
 
 import { useTranslation } from 'react-i18next';
+import { Badge, Skeleton } from '@/components/common';
 
 function Stories() {
 	const { t } = useTranslation(['common']);
@@ -105,6 +105,11 @@ function Stories() {
 	useEffect(() => {
 		if (isSuccess) {
 			setPostIds(data.slice(offset * 10, offset * 10 + 10));
+			if (offset === 0) {
+				setIsLoading(true);
+			} else {
+				setIsLoadingNewStories(true);
+			}
 		}
 	}, [data, offset]);
 
@@ -132,18 +137,15 @@ function Stories() {
 		[post],
 	);
 
-	const onChangeType = useCallback(
-		(value: StoryType) => {
-			if (type === value || isLoadingNewStories) {
-				return;
-			}
-			setPostIds([]);
-			setPost([]);
-			setOffset(0);
-			setType(value);
-		},
-		[isLoadingNewStories, type],
-	);
+	const onChangeType = (value: StoryType) => {
+		if (type === value || isLoadingNewStories || isLoading) {
+			return;
+		}
+		setPostIds([]);
+		setPost([]);
+		setOffset(0);
+		setType(value);
+	};
 
 	const onChangeLanguage = useCallback(
 		(lang: 'fr' | 'en') => {
@@ -212,7 +214,11 @@ function Stories() {
 					]}
 				>
 					{isFetching || isLoading ? (
-						<Text>Loading...</Text>
+						<View style={[layout.col, layout.fullWidth]}>
+							<Skeleton />
+							<Skeleton />
+							<Skeleton />
+						</View>
 					) : (
 						<PostUI
 							data={post}

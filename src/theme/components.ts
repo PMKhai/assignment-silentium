@@ -36,5 +36,10 @@ export default ({ layout, backgrounds, fonts }: ComponentTheme) => {
 			padding: 16,
 			marginBottom: 16,
 		},
+		skeleton: {
+			width: '100%',
+			borderRadius: 10,
+			marginBottom: 16,
+		},
 	} as const satisfies AllStyle;
 };

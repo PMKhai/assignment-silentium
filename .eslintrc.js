@@ -59,7 +59,7 @@ module.exports = {
 		'no-void': 'off',
 		'react/jsx-props-no-spreading': 'off',
 		'import/prefer-default-export': 'off',
-		'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+		'import/no-extraneous-dependencies': 'off',
 		'react/display-name': 'off',
 		'no-console': ['error', { allow: ['error'] }],
 		'prettier/prettier': [
