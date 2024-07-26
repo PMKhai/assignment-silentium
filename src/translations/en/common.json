@@ -2,5 +2,10 @@
   "appName": {
     "full": "React Native Silenium",
     "initials": "RNB"
-  }
+  },
+  "newStories": "New Stories",
+  "topStories": "Top Stories",
+  "bestStories": "Best Stories",
+  "allComments": "All Comments",
+  "viewAllComments": "View all comments"
 }

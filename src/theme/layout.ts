@@ -53,6 +53,18 @@ export default {
 	fullHeight: {
 		height: '100%',
 	},
+	height90: {
+		height: '90%',
+	},
+	height80: {
+		height: '80%',
+	},
+	height50: {
+		height: '50%',
+	},
+	height40: {
+		height: '40%',
+	},
 	/* Positions */
 	relative: {
 		position: 'relative',

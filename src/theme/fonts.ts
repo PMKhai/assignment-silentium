@@ -39,4 +39,5 @@ export const staticFontStyles = {
 	alignCenter: {
 		textAlign: 'center',
 	},
+	underline: { textDecorationLine: 'underline' },
 } as const satisfies Record<string, TextStyle>;

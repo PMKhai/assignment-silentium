@@ -2,5 +2,10 @@
   "appName": {
     "full": "Silenium React Native",
     "initials": "RNB"
-  }
+  },
+  "newStories": "Nouvelles",
+  "topStories": "Meilleures",
+  "bestStories": "Les meilleures",
+  "allComments": "Tous les commentaires",
+  "viewAllComments": "Voir tous les commentaires"
 }

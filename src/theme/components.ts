@@ -24,10 +24,17 @@ export default ({ layout, backgrounds, fonts }: ComponentTheme) => {
 			...layout.justifyCenter,
 			...layout.itemsCenter,
 			...backgrounds.purple100,
-			...fonts.gray400,
+			...fonts.gray800,
 			borderRadius: 50,
 			height: 50,
 			width: 100,
+		},
+		card: {
+			...backgrounds.gray100,
+			...layout.justifyCenter,
+			borderRadius: 10,
+			padding: 16,
+			marginBottom: 16,
 		},
 	} as const satisfies AllStyle;
 };

@@ -39,6 +39,7 @@ module.exports = {
 		},
 	},
 	rules: {
+		'@typescript-eslint/restrict-template-expressions': 'off',
 		'@typescript-eslint/no-unused-vars': 'error',
 		'global-require': 0,
 		'react-hooks/exhaustive-deps': 'off',
